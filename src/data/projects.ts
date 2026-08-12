@@ -164,9 +164,22 @@ export const initialProjects: Project[] = [
     technologies: ['React', 'TypeScript', 'Easypanel'],
     icon: 'Sprout',
   },
+  {
+    id: 'proj-13',
+    title: 'Análise Comercial Defensivos',
+    description: 'Aplicação que faz a análise e comparação de itens do grupo de Defensivos.',
+    url: 'http://172.16.254.157:3000/',
+    environment: 'producao',
+    category: 'analytics',
+    hostType: 'internal',
+    status: 'online',
+    technologies: ['React', 'TypeScript', 'Analytics'],
+    port: '3000',
+    icon: 'Sprout',
+  },
 ];
 
-const STORAGE_KEY = 'agro_hub_sistemas_v12';
+const STORAGE_KEY = 'agro_hub_sistemas_v13';
 
 export const loadProjects = (): Project[] => {
   try {
