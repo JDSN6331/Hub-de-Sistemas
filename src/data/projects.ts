@@ -193,9 +193,25 @@ export const initialProjects: Project[] = [
     username: 'Admin',
     password: 'IM2026',
   },
+  {
+    id: 'proj-15',
+    title: 'Análise Planejamento x Histórico',
+    description: 'Análise dos planejamentos por loja e histórico.',
+    url: 'http://172.16.251.42:8501/',
+    environment: 'producao',
+    category: 'analytics',
+    hostType: 'internal',
+    status: 'online',
+    technologies: ['Python', 'Streamlit', 'Analytics'],
+    port: '8501',
+    icon: 'Sprout',
+    requiresAuth: true,
+    username: 'Admin',
+    password: 'IM2026',
+  },
 ];
 
-const STORAGE_KEY = 'agro_hub_sistemas_v14';
+const STORAGE_KEY = 'agro_hub_sistemas_v15';
 
 export const loadProjects = (): Project[] => {
   try {
