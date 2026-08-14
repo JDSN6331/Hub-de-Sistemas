@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({ onResetToDefaults }) => {
         <div className="flex items-center gap-2">
           <Sprout className="w-4.5 h-4.5 text-[var(--accent-green-main)]" />
           <span className="font-bold text-[var(--text-secondary)]">
-            Hub de Sistema - Inteligência de Mercado
+            Hub de Sistemas - Inteligência de Mercado
           </span>
         </div>
 

@@ -46,7 +46,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
           <div>
             <h1 className="text-xl md:text-2xl font-extrabold tracking-tight text-[var(--text-primary)]">
-              Hub de Sistema - Inteligência de Mercado
+              Hub de Sistemas - Inteligência de Mercado
             </h1>
             <p className="text-xs md:text-sm text-[var(--text-muted)] flex items-center gap-1.5 mt-0.5">
               <ShieldCheck className="w-4 h-4 text-[var(--accent-green-light)]" />
