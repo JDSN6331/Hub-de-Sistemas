@@ -177,9 +177,25 @@ export const initialProjects: Project[] = [
     port: '3000',
     icon: 'Sprout',
   },
+  {
+    id: 'proj-14',
+    title: 'S&OP · Automações',
+    description: 'Automações relacionadas ao planejamento de vendas no Demantra.',
+    url: 'http://172.16.254.157:3002/',
+    environment: 'producao',
+    category: 'analytics',
+    hostType: 'internal',
+    status: 'online',
+    technologies: ['Demantra', 'S&OP', 'Automação'],
+    port: '3002',
+    icon: 'Sprout',
+    requiresAuth: true,
+    username: 'Admin',
+    password: 'IM2026',
+  },
 ];
 
-const STORAGE_KEY = 'agro_hub_sistemas_v13';
+const STORAGE_KEY = 'agro_hub_sistemas_v14';
 
 export const loadProjects = (): Project[] => {
   try {
