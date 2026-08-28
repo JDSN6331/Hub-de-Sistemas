@@ -209,9 +209,22 @@ export const initialProjects: Project[] = [
     username: 'Admin',
     password: 'IM2026',
   },
+  {
+    id: 'proj-16',
+    title: 'Radar de Eventos',
+    description: 'Publicações ligadas a eventos, campanhas e movimentos comerciais.',
+    url: 'http://172.16.251.40:8000/',
+    environment: 'producao',
+    category: 'portal',
+    hostType: 'internal',
+    status: 'online',
+    technologies: ['Eventos', 'Campanhas', 'Comercial'],
+    port: '8000',
+    icon: 'Sprout',
+  },
 ];
 
-const STORAGE_KEY = 'agro_hub_sistemas_v15';
+const STORAGE_KEY = 'agro_hub_sistemas_v16';
 
 export const loadProjects = (): Project[] => {
   try {
