@@ -222,9 +222,21 @@ export const initialProjects: Project[] = [
     port: '8000',
     icon: 'Sprout',
   },
+  {
+    id: 'proj-17',
+    title: 'Nexo Tributário',
+    description: 'Plataforma de inteligência, informação e simulação para a Reforma Tributária sobre o Consumo (LC nº 214/2025 e Decreto nº 12.955/2026).',
+    url: 'https://crc-comercial-insumos-nexo-tributario.br1rfu.easypanel.host/',
+    environment: 'producao',
+    category: 'portal',
+    hostType: 'public',
+    status: 'online',
+    technologies: ['Tributário', 'Simulação', 'Easypanel'],
+    icon: 'Sprout',
+  },
 ];
 
-const STORAGE_KEY = 'agro_hub_sistemas_v16';
+const STORAGE_KEY = 'agro_hub_sistemas_v18';
 
 export const loadProjects = (): Project[] => {
   try {
