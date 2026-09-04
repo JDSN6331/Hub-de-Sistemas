@@ -95,14 +95,14 @@ export const initialProjects: Project[] = [
   },
   {
     id: 'proj-8',
-    title: 'Tarefas Diárias',
-    description: 'Gerenciador e acompanhamento de tarefas diárias.',
-    url: 'https://tarefas-diarias-jdsn.vercel.app/',
+    title: 'Zenith Tarefas & Metas',
+    description: 'Gerenciador de tarefas e metas.',
+    url: 'https://crc-comercial-insumos-zenith-tarefas.br1rfu.easypanel.host/',
     environment: 'producao',
-    category: 'frontend',
+    category: 'portal',
     hostType: 'public',
     status: 'online',
-    technologies: ['React', 'TypeScript', 'Vercel'],
+    technologies: ['React', 'TypeScript', 'Easypanel'],
     icon: 'Sprout',
   },
   {
@@ -234,9 +234,22 @@ export const initialProjects: Project[] = [
     technologies: ['Tributário', 'Simulação', 'Easypanel'],
     icon: 'Sprout',
   },
+  {
+    id: 'proj-18',
+    title: 'Análise de Mix de Produtos',
+    description: 'Desempenho consolidado da modalidade Mix de Produtos por grupo, produto, filial, vendedor e inteligência estratégica para estruturação de Kits comerciais.',
+    url: 'http://172.16.253.34:5175/',
+    environment: 'producao',
+    category: 'analytics',
+    hostType: 'internal',
+    status: 'online',
+    technologies: ['Mix de Produtos', 'Analytics', 'Comercial'],
+    port: '5175',
+    icon: 'Sprout',
+  },
 ];
 
-const STORAGE_KEY = 'agro_hub_sistemas_v18';
+const STORAGE_KEY = 'agro_hub_sistemas_v20';
 
 export const loadProjects = (): Project[] => {
   try {
