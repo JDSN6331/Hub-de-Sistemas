@@ -19,6 +19,7 @@ export const App: React.FC = () => {
 
   // Search & View states
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedAuthor, setSelectedAuthor] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   // Status refresh state
@@ -77,17 +78,21 @@ export const App: React.FC = () => {
   const filteredProjects = useMemo(() => {
     return projects.filter((p) => {
       const query = searchQuery.toLowerCase().trim();
-      return (
+      const matchesQuery =
         query === '' ||
         p.title.toLowerCase().includes(query) ||
         p.description.toLowerCase().includes(query) ||
         p.url.toLowerCase().includes(query) ||
         (p.port && p.port.includes(query)) ||
         p.environment.toLowerCase().includes(query) ||
-        p.technologies.some((t) => t.toLowerCase().includes(query))
-      );
+        (p.responsavel && p.responsavel.toLowerCase().includes(query)) ||
+        p.technologies.some((t) => t.toLowerCase().includes(query));
+
+      const matchesAuthor = !selectedAuthor || p.responsavel === selectedAuthor;
+
+      return matchesQuery && matchesAuthor;
     });
-  }, [projects, searchQuery]);
+  }, [projects, searchQuery, selectedAuthor]);
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-300">
@@ -102,7 +107,11 @@ export const App: React.FC = () => {
       {/* Main Container */}
       <main className="app-container">
         {/* KPI & Stats Banner */}
-        <StatsBanner projects={projects} />
+        <StatsBanner
+          projects={projects}
+          selectedAuthor={selectedAuthor}
+          onSelectAuthor={setSelectedAuthor}
+        />
 
         {/* Search & View Mode Controls */}
         <SearchBar
@@ -116,7 +125,11 @@ export const App: React.FC = () => {
         <ProjectGrid
           projects={filteredProjects}
           viewMode={viewMode}
-          onClearFilters={() => setSearchQuery('')}
+          selectedAuthor={selectedAuthor}
+          onClearFilters={() => {
+            setSearchQuery('');
+            setSelectedAuthor(null);
+          }}
         />
 
         {/* Footer */}

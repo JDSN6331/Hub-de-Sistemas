@@ -23,7 +23,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Buscar por nome do sistema, porta, tecnologia ou palavras-chave..."
+          placeholder="Buscar por nome do sistema, autor, porta, tecnologia ou palavras-chave..."
           className="w-full pl-11 pr-10 py-2.5 rounded-xl bg-[var(--bg-input)] border border-[var(--border-color)] text-[var(--text-primary)] placeholder-[var(--text-muted)] text-sm focus:outline-none focus:border-[var(--accent-green-main)] focus:ring-2 focus:ring-[var(--accent-green-main)]/20 transition-all"
         />
         {searchQuery && (

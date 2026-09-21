@@ -11,6 +11,7 @@ export const initialProjects: Project[] = [
     hostType: 'public',
     status: 'online',
     technologies: ['React', 'TypeScript', 'Web'],
+    responsavel: 'José Duque',
     icon: 'Sprout',
   },
   {
@@ -24,6 +25,7 @@ export const initialProjects: Project[] = [
     status: 'online',
     technologies: ['Python', 'FastAPI', 'PostgreSQL'],
     port: '5000',
+    responsavel: 'José Duque',
     icon: 'Sprout',
   },
   {
@@ -36,6 +38,7 @@ export const initialProjects: Project[] = [
     hostType: 'public',
     status: 'online',
     technologies: ['Google Cloud', 'GIS', 'Nginx'],
+    responsavel: 'Guilherme',
     icon: 'Sprout',
   },
   {
@@ -49,6 +52,7 @@ export const initialProjects: Project[] = [
     status: 'online',
     technologies: ['Salesforce', 'Python', 'BI'],
     port: '5050',
+    responsavel: 'José Duque',
     icon: 'Sprout',
   },
   {
@@ -62,6 +66,7 @@ export const initialProjects: Project[] = [
     status: 'online',
     technologies: ['Vite', 'React', 'TypeScript'],
     port: '5173',
+    responsavel: 'José Duque',
     icon: 'Sprout',
   },
   {
@@ -75,6 +80,7 @@ export const initialProjects: Project[] = [
     status: 'online',
     technologies: ['React', 'TypeScript', 'Dashboard'],
     port: '3000',
+    responsavel: 'José Duque',
     icon: 'Sprout',
   },
   {
@@ -88,6 +94,7 @@ export const initialProjects: Project[] = [
     status: 'online',
     technologies: ['Salesforce', 'ERP', 'React', 'Vite'],
     port: '5174',
+    responsavel: 'Guilherme',
     icon: 'Sprout',
     requiresAuth: true,
     username: 'Admin',
@@ -103,6 +110,7 @@ export const initialProjects: Project[] = [
     hostType: 'public',
     status: 'online',
     technologies: ['React', 'TypeScript', 'Easypanel'],
+    responsavel: 'José Duque',
     icon: 'Sprout',
   },
   {
@@ -116,6 +124,7 @@ export const initialProjects: Project[] = [
     status: 'online',
     technologies: ['React', 'TypeScript', 'CRM'],
     port: '3005',
+    responsavel: 'José Duque',
     icon: 'Sprout',
     requiresAuth: true,
     username: 'Admin',
@@ -131,6 +140,7 @@ export const initialProjects: Project[] = [
     hostType: 'public',
     status: 'online',
     technologies: ['React', 'TypeScript', 'Easypanel'],
+    responsavel: 'José Duque',
     icon: 'Sprout',
     requiresAuth: true,
     username: 'Admin',
@@ -147,6 +157,7 @@ export const initialProjects: Project[] = [
     status: 'online',
     technologies: ['React', 'TypeScript', 'Python'],
     port: '8000',
+    responsavel: 'Irene',
     icon: 'Sprout',
     requiresAuth: true,
     username: 'Admin',
@@ -162,6 +173,7 @@ export const initialProjects: Project[] = [
     hostType: 'public',
     status: 'online',
     technologies: ['React', 'TypeScript', 'Easypanel'],
+    responsavel: 'José Duque',
     icon: 'Sprout',
   },
   {
@@ -175,6 +187,7 @@ export const initialProjects: Project[] = [
     status: 'online',
     technologies: ['React', 'TypeScript', 'Analytics'],
     port: '3000',
+    responsavel: 'Eduardo',
     icon: 'Sprout',
   },
   {
@@ -188,6 +201,7 @@ export const initialProjects: Project[] = [
     status: 'online',
     technologies: ['Demantra', 'S&OP', 'Automação'],
     port: '3002',
+    responsavel: 'Eduardo',
     icon: 'Sprout',
     requiresAuth: true,
     username: 'Admin',
@@ -204,6 +218,7 @@ export const initialProjects: Project[] = [
     status: 'online',
     technologies: ['Python', 'Streamlit', 'Analytics'],
     port: '8501',
+    responsavel: 'Caetano',
     icon: 'Sprout',
     requiresAuth: true,
     username: 'Admin',
@@ -220,6 +235,7 @@ export const initialProjects: Project[] = [
     status: 'online',
     technologies: ['Eventos', 'Campanhas', 'Comercial'],
     port: '8000',
+    responsavel: 'Wellington',
     icon: 'Sprout',
   },
   {
@@ -232,6 +248,7 @@ export const initialProjects: Project[] = [
     hostType: 'public',
     status: 'online',
     technologies: ['Tributário', 'Simulação', 'Easypanel'],
+    responsavel: 'José Duque',
     icon: 'Sprout',
   },
   {
@@ -245,6 +262,7 @@ export const initialProjects: Project[] = [
     status: 'online',
     technologies: ['Mix de Produtos', 'Analytics', 'Comercial'],
     port: '5175',
+    responsavel: 'José Duque',
     icon: 'Sprout',
   },
   {
@@ -257,11 +275,12 @@ export const initialProjects: Project[] = [
     hostType: 'public',
     status: 'online',
     technologies: ['Market Intelligence', 'Concorrentes', 'Insumos', 'Easypanel'],
+    responsavel: 'José Duque',
     icon: 'Sprout',
   },
 ];
 
-const STORAGE_KEY = 'agro_hub_sistemas_v21';
+const STORAGE_KEY = 'agro_hub_sistemas_v22';
 
 export const loadProjects = (): Project[] => {
   try {
@@ -273,7 +292,13 @@ export const loadProjects = (): Project[] => {
         const updated = parsed.map((p: Project) => {
           const initial = initialMap.get(p.id);
           if (initial) {
-            return { ...p, url: initial.url, title: initial.title, description: initial.description };
+            return {
+              ...p,
+              url: initial.url,
+              title: initial.title,
+              description: initial.description,
+              responsavel: initial.responsavel || p.responsavel,
+            };
           }
           return p;
         });

@@ -6,12 +6,14 @@ import { Sprout, SearchX } from 'lucide-react';
 interface ProjectGridProps {
   projects: Project[];
   viewMode: 'grid' | 'list';
+  selectedAuthor?: string | null;
   onClearFilters: () => void;
 }
 
 export const ProjectGrid: React.FC<ProjectGridProps> = ({
   projects,
   viewMode,
+  selectedAuthor,
   onClearFilters,
 }) => {
   if (projects.length === 0) {
@@ -26,7 +28,7 @@ export const ProjectGrid: React.FC<ProjectGridProps> = ({
         </p>
         <button
           onClick={onClearFilters}
-          className="px-4 py-2 rounded-xl bg-[var(--accent-green-main)] text-white text-sm font-semibold hover:bg-[var(--accent-green-dark)] transition-all"
+          className="px-4 py-2 rounded-xl bg-[var(--accent-green-main)] text-white text-sm font-semibold hover:bg-[var(--accent-green-dark)] transition-all cursor-pointer"
         >
           Limpar Filtros de Busca
         </button>
@@ -39,7 +41,7 @@ export const ProjectGrid: React.FC<ProjectGridProps> = ({
       <div className="flex items-center gap-2 mb-2">
         <Sprout className="w-5 h-5 text-[var(--accent-green-main)]" />
         <h2 className="text-base font-extrabold text-[var(--text-primary)]">
-          Todos os Projetos do Departamento ({projects.length})
+          {selectedAuthor ? `Aplicações desenvolvidas por ${selectedAuthor}` : 'Todos os Projetos do Departamento'} ({projects.length})
         </h2>
       </div>
 

@@ -10,6 +10,7 @@ import {
   Wrench,
   CheckCircle2,
   Code2,
+  User,
 } from 'lucide-react';
 
 interface ProjectCardProps {
@@ -94,6 +95,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   {project.title}
                 </h3>
                 {renderEnvironmentBadge(project.environment)}
+                {project.responsavel && (
+                  <span
+                    className="inline-flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[var(--bg-tertiary)] text-[var(--text-primary)] border border-[var(--border-color)] shadow-2xs"
+                    title={`Autor: ${project.responsavel}`}
+                  >
+                    <User className="w-3 h-3 text-[var(--accent-green-main)]" />
+                    <span className="text-[var(--text-muted)] font-medium">Autor:</span>
+                    <span>{project.responsavel}</span>
+                  </span>
+                )}
                 {project.port && (
                   <span className="text-[11px] font-mono px-1.5 py-0.5 rounded-md bg-[var(--bg-tertiary)] text-[var(--text-muted)] border border-[var(--border-color)] font-semibold">
                     :{project.port}
@@ -197,6 +208,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               </span>
             )}
           </div>
+
+          {/* Author Destaque */}
+          {project.responsavel && (
+            <div className="flex items-center gap-2 mb-3">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-color)] text-xs font-semibold shadow-2xs group-hover:border-[var(--accent-green-main)]/40 transition-colors">
+                <div className="w-5 h-5 rounded-full bg-[var(--accent-green-main)] text-white flex items-center justify-center text-[10px] font-bold shadow-xs">
+                  <User className="w-3 h-3" />
+                </div>
+                <span className="text-[11px] text-[var(--text-muted)] font-medium">Autor:</span>
+                <span className="text-[12px] font-bold text-[var(--text-primary)]">
+                  {project.responsavel}
+                </span>
+              </div>
+            </div>
+          )}
 
           {/* Description */}
           <p className="text-xs text-[var(--text-secondary)] line-clamp-3 mb-4 leading-relaxed font-normal">
