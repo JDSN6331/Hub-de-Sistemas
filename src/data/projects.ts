@@ -267,20 +267,20 @@ export const initialProjects: Project[] = [
   },
   {
     id: 'proj-19',
-    title: 'Cooxupé Market Intelligence',
+    title: 'PAINEL DA CONCORRÊNCIA',
     description: 'Monitoramento Estratégico de Insumos, Irrigação e Maquinário Agrícola no Sul de MG, Cerrado e Mogiana Paulista nos principais concorrentes da Cooxupé.',
     url: 'https://crc-comercial-insumos-market-intelligence.br1rfu.easypanel.host/',
     environment: 'producao',
     category: 'analytics',
     hostType: 'public',
     status: 'online',
-    technologies: ['Market Intelligence', 'Concorrentes', 'Insumos', 'Easypanel'],
+    technologies: ['Painel da Concorrência', 'Concorrentes', 'Insumos', 'Easypanel', 'Market Intelligence'],
     responsavel: 'José Duque',
     icon: 'Sprout',
   },
 ];
 
-const STORAGE_KEY = 'agro_hub_sistemas_v22';
+const STORAGE_KEY = 'agro_hub_sistemas_v23';
 
 export const loadProjects = (): Project[] => {
   try {
