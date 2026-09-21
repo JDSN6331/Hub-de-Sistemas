@@ -247,9 +247,21 @@ export const initialProjects: Project[] = [
     port: '5175',
     icon: 'Sprout',
   },
+  {
+    id: 'proj-19',
+    title: 'Cooxupé Market Intelligence',
+    description: 'Monitoramento Estratégico de Insumos, Irrigação e Maquinário Agrícola no Sul de MG, Cerrado e Mogiana Paulista nos principais concorrentes da Cooxupé.',
+    url: 'https://crc-comercial-insumos-market-intelligence.br1rfu.easypanel.host/',
+    environment: 'producao',
+    category: 'analytics',
+    hostType: 'public',
+    status: 'online',
+    technologies: ['Market Intelligence', 'Concorrentes', 'Insumos', 'Easypanel'],
+    icon: 'Sprout',
+  },
 ];
 
-const STORAGE_KEY = 'agro_hub_sistemas_v20';
+const STORAGE_KEY = 'agro_hub_sistemas_v21';
 
 export const loadProjects = (): Project[] => {
   try {
