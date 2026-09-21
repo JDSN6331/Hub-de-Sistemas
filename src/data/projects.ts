@@ -267,7 +267,7 @@ export const initialProjects: Project[] = [
   },
   {
     id: 'proj-19',
-    title: 'PAINEL DA CONCORRÊNCIA',
+    title: 'Painel da Concorrência',
     description: 'Monitoramento Estratégico de Insumos, Irrigação e Maquinário Agrícola no Sul de MG, Cerrado e Mogiana Paulista nos principais concorrentes da Cooxupé.',
     url: 'https://crc-comercial-insumos-market-intelligence.br1rfu.easypanel.host/',
     environment: 'producao',
@@ -280,7 +280,7 @@ export const initialProjects: Project[] = [
   },
 ];
 
-const STORAGE_KEY = 'agro_hub_sistemas_v23';
+const STORAGE_KEY = 'agro_hub_sistemas_v24';
 
 export const loadProjects = (): Project[] => {
   try {
